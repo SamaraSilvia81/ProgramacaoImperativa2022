@@ -1,0 +1,52 @@
+package Atv02;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class Questão04 {
+	
+	static void parImpar() {
+		
+		int[] par = new int[10];
+		int[] impar = new int[10];
+		
+		int contPar = 0;
+		int contImpar = 0;
+		
+		System.out.print("Os números aleatórios são:");
+		
+		while(true) {
+			
+			Random aleatorio = new Random();
+		
+			int valorRandomico = aleatorio.nextInt(20) + 1;
+			System.out.print(" " +valorRandomico);
+			
+			if(valorRandomico % 2 == 0 && contPar < 10) {
+				par[contPar] = valorRandomico;
+				contPar += 1;
+			}
+			if(valorRandomico % 2 == 1 && contImpar < 10) {
+				impar[contImpar] = valorRandomico;
+				contImpar += 1;
+			}
+		
+			if(contImpar == 10 && contPar == 10) {
+				break;
+			}
+		}
+		
+		 System.out.print("\n-----------------------------------------------------------------------------");
+	     System.out.print("\nQuantos pares têm?" + " " + contPar);
+	     System.out.print("\nOs números pares são:" + " " + Arrays.toString(par));
+	     System.out.print("\n---------------------------------------------------------");
+	     System.out.print("\nQuantos impares têm?" + " " +contImpar);
+	     System.out.print("\nOs números impares são:" + " " + Arrays.toString(impar));
+	}
+	
+	public static void main(String[] args) {
+	
+		parImpar();
+		
+	}
+}

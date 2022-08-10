@@ -1,0 +1,32 @@
+package Atv02;
+
+import java.util.Scanner;
+
+public class Questão02 {
+	
+	//Faça um programa que preencha um vetor com dez números reais, calcule e mostre a
+	// quantidade de números negativos e a soma dos números positivos desse vetor.
+	
+	public static void main(String[] args) {
+	
+	Scanner leitor = new Scanner(System.in);
+		
+		int valor = 0, negativo = 0, positivo = 0, numNeg = 0, numPos = 0, somaPos = 0;
+		
+		for(int i = 1; i<=10; i++) {
+			System.out.print("Digite o " + i+ "° valor: ");
+			valor = leitor.nextInt();	
+			
+			if(valor<0) {
+				numNeg++;
+			} else {
+				numPos++;
+				somaPos+=numPos;
+			}
+		}
+		
+		System.out.print("\nOs números negativos são: " + negativo);
+		System.out.print("\nA quantidade de números negativos são: " + numNeg);
+		System.out.print("\nA soma dos números positivos é: " +somaPos);
+	}
+}

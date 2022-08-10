@@ -1,0 +1,43 @@
+package Atv02;
+
+import java.util.Random;
+
+public class random3 {
+	
+	public int[] gerarNumeros(int quantidade, boolean par) {
+		
+	    Random r = new Random();
+	    int[] numeros = new int[quantidade];
+	    int i = 0;
+	    int resto = par ? 0 : 1;
+	    while (i < quantidade) {
+	    	numeros[i] = r.nextInt();
+	    } 
+	    
+	    if (Math.abs(numeros[i]) % 2 != resto) {
+	    	 // abs() para casos em que o número é negativo, pois -3 % 2 == -1
+	        numeros[i] += 1;
+	    }
+
+	    return numeros;
+	}
+
+	public static void main(String[] args) {
+		
+		int[] pares = gerarNumeros(20, true);
+		int[] impares = gerarNumeros(30, false);
+		int[] numeros = new int[50];
+		for (int i = 0; i < 20; i++) {
+		    numeros[i] = pares[i];
+		}
+		for (int i = 0; i < 30; i++) {
+		    numeros[i + 20] = impares[i];
+		}
+		
+		
+		
+		
+		
+	}
+
+}

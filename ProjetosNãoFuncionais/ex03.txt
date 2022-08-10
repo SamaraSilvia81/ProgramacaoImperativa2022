@@ -1,0 +1,27 @@
+ppackage Atv02;
+
+import java.util.Scanner;
+
+public class Questão03 {
+	
+	// Crie um programa que defina um vetor com 10 elementos inteiros. Crie uma função para
+	// encontrar um determinado valor positivo e o substitua pelo seu negativo.
+	
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		int valor = 0, numNeg2 = 0, numNeg = 0;
+			
+		for(int i = 1; i<=10; i++) {
+			System.out.print("Digite o " +i+ "° valor: ");
+			valor = leitor.nextInt();	
+			
+			if(valor>0) {
+				numNeg = -valor;
+			} else {
+				numNeg++;
+			}
+		}
+	}
+}

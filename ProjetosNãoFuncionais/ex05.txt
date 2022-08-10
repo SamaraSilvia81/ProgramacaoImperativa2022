@@ -1,0 +1,52 @@
+package Atv02;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class random2 {
+	
+	static
+	
+	public static void main(String[] args) {
+		
+		Random aleatorio = new Random();
+        
+		int [] array = new int[20]; // 20 números serão gerados.
+       
+        int [] par = new int[10];
+        int [] impar = new int[10];
+        
+        int contPar = 0;
+        int contImpar = 0;
+        
+        System.out.print("Os números aleatórios são:");
+        
+        for (int valor:array) {
+        	
+             array[valor] = aleatorio.nextInt(20)+1; // Gera números aleatórios com limite 20 na posição i;
+             System.out.print(" " +array[valor]); // Saída, são gerados 20 números.  
+ 
+             if(array[valor]%2==0 && contPar<10) {	
+            	 par[contPar] = array[valor];
+            	 contPar+=1;    // contabiliza a quantidade de pares, pois todo par vai entrar ai fica somando.
+             } 
+             
+             if(array[valor]%2==1 && contImpar<10) {
+            	 impar[contImpar] = array[valor];
+                 contImpar+=1;
+             } 
+             
+             if(contImpar == 10 && contPar == 10) {
+  				break;
+  				}
+        }
+       
+        System.out.print("\n-----------------------------------------------------------------------------");
+        System.out.print("\nQuantos pares têm?" + " " + contPar);
+        System.out.print("\nOs números pares são:" + " " + Arrays.toString(par));
+        System.out.print("\n---------------------------------------------------------");
+        System.out.print("\nQuantos impares têm?" + " " +contImpar);
+        System.out.print("\nOs números impares são:" + " " + Arrays.toString(impar));
+        
+       }
+	}
